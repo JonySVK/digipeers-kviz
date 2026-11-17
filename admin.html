@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6100ff">
+  <title>Administrácia – digiPEERS kvíz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="digiPEERS kvíz – začiatok">
+        <img class="brand-logo" src="logo.png" alt="" aria-hidden="true" onerror="this.remove()">
+        <span class="brand-name">digiPEERS kvíz</span>
+      </a>
+      <a class="button button-secondary" href="index.html">Späť na kvíz</a>
+    </header>
+    <main>
+      <section class="screen is-active" id="adminScreen" aria-labelledby="adminTitle">
+        <div class="admin-card card">
+          <div id="adminLogin">
+            <p class="eyebrow">Súkromná časť</p>
+            <h1 class="admin-heading" id="adminTitle">Prihlásenie správcu</h1>
+            <p class="admin-intro">Zadaj prístupový kód a zobrazíš si štatistiky kvízu.</p>
+            <form id="loginForm">
+              <label class="field-label" for="adminCode">Prístupový kód</label>
+              <input class="text-input" id="adminCode" name="adminCode" type="password" autocomplete="current-password" required>
+              <p class="error-message" id="loginError" role="alert" hidden>Nesprávny kód. Skús to znova.</p>
+              <div class="form-actions"><button class="button button-primary" type="submit">Prihlásiť sa</button></div>
+            </form>
+          </div>
+          <div id="adminStats" hidden>
+            <p class="eyebrow">Administrácia</p>
+            <h1 class="admin-heading">Štatistiky kvízu</h1>
+            <div class="stats-grid">
+              <div class="stat-box"><span class="stat-label">Odohrané hry</span><strong class="stat-value" id="gamesPlayed">0</strong></div>
+              <div class="stat-box"><span class="stat-label">Priemerná úspešnosť</span><strong class="stat-value" id="averageScore">0 %</strong></div>
+            </div>
+            <div class="form-actions">
+              <button class="button button-danger" id="resetStats" type="button">Resetovať štatistiky</button>
+              <button class="button button-secondary" id="logoutButton" type="button">Odhlásiť sa</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p class="storage-note" id="storageNote" role="status" hidden>Prehliadač nedovolil uložiť štatistiky. Údaje zostanú dostupné len počas otvorenia tejto stránky.</p>
+    </main>
+    <footer class="site-footer">&copy; Laura Eibenová &amp; Ján Ivičič 2026</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

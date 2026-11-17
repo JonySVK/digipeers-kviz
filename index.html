@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6100ff">
+  <title>digiPEERS kvíz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="quiz">
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="digiPEERS kvíz – začiatok">
+        <img class="brand-logo" src="logo.png" alt="" aria-hidden="true" onerror="this.remove()">
+        <span class="brand-name">digiPEERS kvíz</span>
+      </a>
+    </header>
+    <main>
+      <section class="screen is-active" id="startScreen" aria-labelledby="welcomeTitle">
+        <div class="hero card">
+          <p class="eyebrow">Zisti, čo vieš</p>
+          <img class="hero-logo" src="logo.png" alt="" role="link" tabindex="0" aria-label="Dvojklikom otvoriť administráciu" title="Dvojklikom otvoriť administráciu" onerror="this.remove()">
+          <h1 id="welcomeTitle">digiPEERS kvíz</h1>
+          <p class="lead">Krátky kvíz o digitálnom svete. Vyber odpoveď pri každej otázke a na konci si pozri celý prehľad.</p>
+          <button class="button button-primary" id="startButton" type="button">Začať kvíz</button>
+        </div>
+      </section>
+      <section class="screen" id="quizScreen" aria-labelledby="questionText" aria-live="polite">
+        <div class="quiz-card card">
+          <div class="quiz-meta"><span id="questionCounter">Otázka 1 z 1</span><span id="progressPercent">0 %</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Priebeh kvízu" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+          <h2 class="question-title" id="questionText"></h2>
+          <div class="options" id="optionsList"></div>
+          <div class="quiz-actions"><button class="button button-primary" id="nextButton" type="button" disabled>Ďalšia otázka</button></div>
+        </div>
+      </section>
+      <section class="screen" id="resultScreen" aria-labelledby="resultTitle">
+        <div class="result-card card">
+          <p class="eyebrow">Koniec kvízu</p>
+          <h2 id="resultTitle">Tvoj výsledok</h2>
+          <div class="score" id="finalScore">0 %</div>
+          <p class="score-caption" id="scoreCaption"></p>
+          <h3>Prehľad odpovedí</h3>
+          <div class="review" id="reviewList"></div>
+          <div class="action-row">
+            <button class="button button-primary" id="restartButton" type="button">Zahrať znova</button>
+            <button class="button button-secondary" id="homeButton" type="button">Na začiatok</button>
+          </div>
+        </div>
+      </section>
+      <p class="storage-note" id="storageNote" role="status" hidden>Prehliadač nedovolil uložiť štatistiky. Údaje zostanú dostupné len počas otvorenia tejto stránky.</p>
+    </main>
+    <footer class="site-footer">&copy; Laura Eibenová &amp; Ján Ivičič 2026</footer>
+  </div>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
